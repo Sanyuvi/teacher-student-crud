@@ -2,13 +2,8 @@ import React from "react";
 import { useContext } from "react";
 import Datacontext from "../context/Datacontext";
 
-
 function Navbar() {
-
-  const {Changestyle1}=useContext(Datacontext)
-
- 
- 
+  const { Changestyle1 } = useContext(Datacontext);
 
   return (
     <div className="navbar-top">
@@ -23,9 +18,7 @@ function Navbar() {
           <i className="fa fa-bars"></i>
         </button>
 
-        <div className="text-center">
-          
-        </div>
+        <div className="text-center"></div>
 
         {/* <!-- Topbar Navbar -->*/}
         <ul className="navbar-nav ml-auto">
@@ -268,7 +261,7 @@ function Navbar() {
               aria-expanded="false"
             >
               <span className="mr-2 d-none d-lg-inline text-gray-600 small">
-                Boobathi Thillan
+                SNMS
               </span>
               <img
                 className="img-profile rounded-circle"

@@ -3,10 +3,8 @@ import Navpagecollapse from "./Navpagecollapse";
 import { useContext } from "react";
 import Datacontext from "../context/Datacontext";
 
-
-function Sidebar({Link }) {
-
-  const{style,Changestyle}= useContext(Datacontext)
+function Sidebar({ Link }) {
+  const { style, Changestyle } = useContext(Datacontext);
 
   return (
     <div className="sidebar-left">
@@ -18,11 +16,9 @@ function Sidebar({Link }) {
           href="##"
         >
           <div className="sidebar-brand-icon">
-          <i className="fa-solid fa-house"></i>
+            <i className="fa-solid fa-house"></i>
           </div>
-          <div className="sidebar-brand-text mx-3">
-            SB Admin School <sup>2</sup>
-          </div>
+          <div className="sidebar-brand-text mx-3">SNMS School</div>
         </a>
 
         {/* <!-- Divider --> */}
@@ -30,11 +26,10 @@ function Sidebar({Link }) {
 
         {/* <!-- Nav Item - Dashboard --> */}
         <li className="nav-item active">
-            
           <Link className="nav-link" to="/">
-          <div >
-            <i className="fas fa-fw fa-tachometer-alt"></i>
-            <span >Dashboard</span>
+            <div>
+              <i className="fas fa-fw fa-tachometer-alt"></i>
+              <span>Dashboard</span>
             </div>
           </Link>
         </li>
@@ -45,26 +40,19 @@ function Sidebar({Link }) {
         {/* <!-- Heading --> */}
         <div className="sidebar-heading">Teacher</div>
 
-        <Navpagecollapse
-          title="teacher"
-          Link={Link}
-        />
+        <Navpagecollapse title="teacher" Link={Link} />
 
         <div className="sidebar-heading">Student</div>
-        <Navpagecollapse
-          title="student"
-          Link={Link}
-        />
+        <Navpagecollapse title="student" Link={Link} />
         {/* <!-- Divider -->*/}
         <hr className="sidebar-divider" />
 
         {/* <!-- Nav Item - Tables -->*/}
         <li className="nav-item">
           <Link className="nav-link" to="/Logout">
-          <i className="fa-solid fa-plane-circle-xmark"></i>
+            <i className="fa-solid fa-plane-circle-xmark"></i>
             <span>Log-out</span>
           </Link>
-          
         </li>
 
         {/* <!-- Divider -->*/}
@@ -78,8 +66,6 @@ function Sidebar({Link }) {
             onClick={Changestyle}
           ></button>
         </div>
-
-       
       </ul>
       {/* <!-- End of Sidebar --> */}
     </div>

@@ -4,31 +4,28 @@ import { useContext } from "react";
 import Datacontext from "../context/Datacontext";
 
 function Createteacher() {
-
-  const{teacher,addTeacher,setEdittea}=useContext(Datacontext);
+  const { teacher, addTeacher, setEdittea } = useContext(Datacontext);
 
   function Editteacher(id, name, master, address) {
-    setEdittea([{
-      id: id,
-      name: name,
-      master: master,
-      address: address
-
-    }])
+    setEdittea([
+      {
+        id: id,
+        name: name,
+        master: master,
+        address: address,
+      },
+    ]);
   }
 
   function Deleteteacher(id) {
-   
-    addTeacher(
-      teacher.filter((te) =>te.id !== id)
-    );
+    addTeacher(teacher.filter((te) => te.id !== id));
   }
 
   return (
     <div className="container">
       <div className="row">
         <div className="col table-responsive">
-          <div className="bg-primary form-control">
+          <div className="bg-secondary form-control">
             <p className=" text-white d-inline-block col-10">Teacher's List</p>{" "}
             <Link to="/Teacher/Add" className=" text-end col-2 text-white">
               Add
@@ -58,7 +55,9 @@ function Createteacher() {
                         <Link to="/Teacher/Edit">
                           <i
                             className="fa-solid fa-pen-nib"
-                            onClick={() => Editteacher(te.id, te.name, te.master, te.address)}
+                            onClick={() =>
+                              Editteacher(te.id, te.name, te.master, te.address)
+                            }
                           ></i>
                         </Link>
                       </td>

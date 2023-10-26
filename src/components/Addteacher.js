@@ -3,9 +3,8 @@ import { Link } from "react-router-dom";
 import { useContext } from "react";
 import Datacontext from "../context/Datacontext";
 
- function Addteacher() {
-
-  const{teacher,addTeacher}=useContext(Datacontext);
+function Addteacher() {
+  const { teacher, addTeacher } = useContext(Datacontext);
 
   const [name, setName] = useState(null);
 
@@ -13,22 +12,15 @@ import Datacontext from "../context/Datacontext";
 
   const [address, setAddress] = useState(null);
 
- 
-
- 
-
   useEffect(() => {
     setName(null);
     setAddress(null);
     setProfession(null);
-
   }, [teacher.length]);
 
   function AddTeacher() {
-
     if (name === null || profession === null || address === null) {
       alert("Fill all information");
-    
     } else {
       addTeacher([
         ...teacher,
@@ -39,14 +31,12 @@ import Datacontext from "../context/Datacontext";
           address: address,
         },
       ]);
-      
     }
-
   }
 
   return (
     <>
-      <h1 className="form-control bg-primary text-white">Add Teacher</h1>
+      <h1 className="form-control bg-secondary text-white">Add Teacher</h1>
       <form onSubmit={AddTeacher}>
         <div className="mb-3 m-3 text-start">
           <label htmlFor="name" className="form-label">
@@ -59,7 +49,8 @@ import Datacontext from "../context/Datacontext";
             value={name}
             onChange={(e) => {
               setName(e.target.value);
-            }} />
+            }}
+          />
         </div>
         <div className="mb-3 m-3 text-start">
           <label htmlFor="profession" className="form-label">
@@ -72,7 +63,8 @@ import Datacontext from "../context/Datacontext";
             value={profession}
             onChange={(e) => {
               setProfession(e.target.value);
-            }} />
+            }}
+          />
         </div>
         <div className="mb-3 m-3 text-start">
           <label className="form-check-label" htmlFor="address">
@@ -85,18 +77,19 @@ import Datacontext from "../context/Datacontext";
             value={address}
             onChange={(e) => {
               setAddress(e.target.value);
-            }} />
+            }}
+          />
         </div>
         <Link to="/Teacher">
-          <button type="submit" className="btn btn-primary m-2 bg-danger">
+          <button type="submit" className="btn btn-secondary m-2 bg-danger">
             Cancel
           </button>
         </Link>
         <Link to="/Teacher">
           <button
             type="submit"
-            className="btn btn-primary m-2"
-            onClick={()=>AddTeacher()}
+            className="btn btn-secondary m-2"
+            onClick={() => AddTeacher()}
           >
             Save
           </button>
@@ -105,4 +98,4 @@ import Datacontext from "../context/Datacontext";
     </>
   );
 }
-export default Addteacher
+export default Addteacher;

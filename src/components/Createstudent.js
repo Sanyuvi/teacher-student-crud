@@ -3,36 +3,30 @@ import Datacontext from "../context/Datacontext";
 import { Link } from "react-router-dom";
 
 function Createstudent() {
-
-  const { student, addStudent, setEditstu } = useContext(Datacontext)
-
+  const { student, addStudent, setEditstu } = useContext(Datacontext);
 
   function Editstudent(id, name, fathername, class1, address, teacher) {
-    setEditstu([{
-      id: id,
-      name: name,
-      fathername: fathername,
-      class: class1,
-      address: address,
-      teacher: teacher,
-    }])
+    setEditstu([
+      {
+        id: id,
+        name: name,
+        fathername: fathername,
+        class: class1,
+        address: address,
+        teacher: teacher,
+      },
+    ]);
   }
 
-
-
   function Deletestudent(id) {
-
-
-    addStudent(
-      student.filter((st) => st.id !== id)
-    );
+    addStudent(student.filter((st) => st.id !== id));
   }
 
   return (
     <div className="container">
       <div className="row">
         <div className="col table-responsive">
-          <div className="bg-primary form-control ">
+          <div className="bg-secondary form-control ">
             <p className=" text-white d-inline-block col-10">Student's List</p>{" "}
             <Link to="/Student/Add" className=" text-end col-2 text-white">
               Add
@@ -68,7 +62,16 @@ function Createstudent() {
                         <Link to="/Student/Edit">
                           <i
                             className="fa-solid fa-pen-nib"
-                            onClick={() => Editstudent(st.id, st.name, st.fathername, st.class, st.address, st.teacher)}
+                            onClick={() =>
+                              Editstudent(
+                                st.id,
+                                st.name,
+                                st.fathername,
+                                st.class,
+                                st.address,
+                                st.teacher
+                              )
+                            }
                           ></i>
                         </Link>
                       </td>
@@ -94,5 +97,4 @@ function Createstudent() {
   );
 }
 
-export default Createstudent
-
+export default Createstudent;
